@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Account — R Form</title>
+<link rel="stylesheet" href="style.css"/>
+<link rel="stylesheet" href="account.css"/>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-logo">RFORM</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li><li><a href="shop.html">Shop</a></li>
+    <li><a href="custom.html">Custom Order</a></li><li><a href="feedback.html">Reviews</a></li>
+    <li><a href="account.html" class="active">Account</a></li>
+  </ul>
+  <div class="nav-actions">
+    <a href="cart.html" class="nav-cart"><span>🛒</span> Cart <span class="cart-count" style="display:none">0</span></a>
+    <button class="theme-btn"><span class="theme-icon">☀️</span></button>
+    <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+<div class="mobile-nav" id="mobileNav">
+  <a href="index.html">Home</a><a href="shop.html">Shop</a>
+  <a href="custom.html">Custom</a><a href="feedback.html">Reviews</a>
+  <a href="account.html">Account</a><a href="cart.html">Cart 🛒</a>
+</div>
+
+<div class="acc-page section" style="padding-top:8rem">
+  <aside class="acc-sidebar glass reveal">
+    <div class="acc-avatar">
+      <div class="av-circle grad-text">G</div>
+      <div>
+        <p class="acc-name">Guest User</p>
+        <p class="acc-email mono">Not signed in</p>
+      </div>
+    </div>
+    <nav class="acc-nav">
+      <a class="acc-link active" data-tab="orders" href="#">📦 Orders</a>
+      <a class="acc-link" data-tab="profile" href="#">👤 Profile</a>
+      <a class="acc-link" data-tab="settings" href="#">⚙ Settings</a>
+      <a class="acc-link acc-logout" href="index.html">→ Sign Out</a>
+    </nav>
+  </aside>
+  <main class="acc-main">
+    <div class="acc-tab active" id="tab-orders">
+      <div class="label reveal">Order History</div>
+      <h2 class="reveal" style="margin-bottom:2rem">Your <span class="grad-text">Orders</span></h2>
+      <div id="ordersContainer"></div>
+    </div>
+    <div class="acc-tab" id="tab-profile">
+      <div class="label reveal">Personal Info</div>
+      <h2 class="reveal" style="margin-bottom:2rem">My <span class="grad-text">Profile</span></h2>
+      <div class="glass" style="padding:2rem;max-width:600px" id="profileForm">
+        <div class="g2"><div class="float-group"><input type="text" placeholder=" "/><label>First Name</label></div><div class="float-group"><input type="text" placeholder=" "/><label>Last Name</label></div></div>
+        <div class="float-group"><input type="email" placeholder=" "/><label>Email</label></div>
+        <div class="float-group"><input type="tel" placeholder=" "/><label>Phone</label></div>
+        <div class="float-group"><textarea rows="3" placeholder=" "></textarea><label>Default Address</label></div>
+        <button class="btn btn-primary" onclick="showToast('Saved! (Firebase integration pending)')">Save Changes</button>
+      </div>
+    </div>
+    <div class="acc-tab" id="tab-settings">
+      <div class="label reveal">Preferences</div>
+      <h2 class="reveal" style="margin-bottom:2rem">Account <span class="grad-text">Settings</span></h2>
+      <div class="glass" style="max-width:600px;overflow:hidden" id="settingsList">
+        <div class="setting-row">
+          <div><h4>Theme</h4><p>Switch between light and dark mode</p></div>
+          <button class="btn btn-outline btn-sm theme-btn"><span class="theme-icon">☀️</span> Toggle</button>
+        </div>
+        <div class="setting-row">
+          <div><h4>Email Notifications</h4><p>Order updates and new product alerts</p></div>
+          <label class="toggle"><input type="checkbox" checked/><span class="tslider"></span></label>
+        </div>
+        <div class="setting-row">
+          <div><h4>Delete Account</h4><p>Permanently remove all data</p></div>
+          <button class="btn btn-sm" style="border:1px solid #f87171;color:#f87171;background:transparent;border-radius:var(--radius-md);padding:0.5rem 1.2rem;font-size:0.76rem;cursor:pointer" onclick="showToast('Contact support to delete account')">Delete</button>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<footer class="footer">
+  <div class="footer-grid">
+    <div><div class="footer-logo">RFORM</div><p class="footer-tagline">Premium 3D printing studio.</p></div>
+    <div class="footer-col"><h5>Shop</h5><a href="shop.html">All Products</a></div>
+    <div class="footer-col"><h5>Help</h5><a href="feedback.html">Contact</a></div>
+    <div class="footer-col"><h5>Account</h5><a href="cart.html">Cart</a></div>
+    <div class="footer-col"><h5>Info</h5><a href="#">Shipping</a></div>
+  </div>
+  <div class="footer-bottom"><span>© 2025 R Form.</span></div>
+</footer>
+
+<script src="main.js"></script>
+<script src="account.js"></script>
+</body>
+</html>

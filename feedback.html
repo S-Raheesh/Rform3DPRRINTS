@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Reviews — R Form</title>
+<link rel="stylesheet" href="style.css"/>
+<link rel="stylesheet" href="feedback.css"/>
+</head>
+<body>
+
+<!-- NAV — fully working theme toggle included -->
+<nav class="nav">
+  <a href="index.html" class="nav-logo">RFORM</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="shop.html">Shop</a></li>
+    <li><a href="custom.html">Custom Order</a></li>
+    <li><a href="feedback.html" class="active">Reviews</a></li>
+    <li><a href="account.html">Account</a></li>
+  </ul>
+  <div class="nav-actions">
+    <a href="cart.html" class="nav-cart"><span>🛒</span> Cart <span class="cart-count" style="display:none">0</span></a>
+    <button class="theme-btn" aria-label="Toggle theme"><span class="theme-icon">☀️</span></button>
+    <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+<div class="mobile-nav" id="mobileNav">
+  <a href="index.html">Home</a>
+  <a href="shop.html">Shop</a>
+  <a href="custom.html">Custom Order</a>
+  <a href="feedback.html">Reviews</a>
+  <a href="account.html">Account</a>
+  <a href="cart.html">Cart 🛒</a>
+</div>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="label">Share Your Experience</div>
+  <h1>Customer <span class="grad-text">Reviews</span></h1>
+  <p style="color:var(--text-2);margin-top:0.75rem;max-width:500px;margin-inline:auto">
+    We read every single review. Your words help us improve and help others discover R Form.
+  </p>
+</div>
+
+<!-- STATS BAR -->
+<div class="fb-stats-bar">
+  <div class="fb-stats-inner">
+    <div class="fb-stat reveal"><span class="fb-stat-n grad-text">4.9</span><div><span>★★★★★</span><p>Average Rating</p></div></div>
+    <div class="fb-stat-div"></div>
+    <div class="fb-stat reveal"><span class="fb-stat-n grad-text" id="totalReviews">0</span><div><p>Total Reviews</p></div></div>
+    <div class="fb-stat-div"></div>
+    <div class="fb-stat reveal"><span class="fb-stat-n grad-text">98%</span><div><p>Recommend R Form</p></div></div>
+  </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="section fb-layout">
+
+  <!-- LEFT: Write a Review -->
+  <div class="fb-form-col">
+    <div class="fb-form-card glass reveal">
+      <div class="label">Write a Review</div>
+      <h3 style="margin-bottom:0.5rem">Share your <span class="grad-text">thoughts</span></h3>
+      <p style="font-size:0.84rem;color:var(--text-2);margin-bottom:2rem">Received your order? We'd love to hear about it.</p>
+
+      <!-- Name -->
+      <div class="float-group">
+        <input type="text" id="fbName" placeholder=" " autocomplete="name"/>
+        <label>Your Name *</label>
+      </div>
+
+      <!-- Email -->
+      <div class="float-group">
+        <input type="email" id="fbEmail" placeholder=" " autocomplete="email"/>
+        <label>Email Address *</label>
+      </div>
+
+      <!-- Product purchased -->
+      <div class="float-group">
+        <select id="fbProduct">
+          <option value="">Select a product…</option>
+          <option>Custom Name Plate</option>
+          <option>3D Phone Stand</option>
+          <option>Mechanical Gear Model</option>
+          <option>Miniature Figurine</option>
+          <option>Custom Keychain</option>
+          <option>Wall Art Panel</option>
+          <option>Desk Organizer</option>
+          <option>Custom Logo Print</option>
+          <option>Other / Custom Order</option>
+        </select>
+        <label>Product Purchased</label>
+      </div>
+
+      <!-- Star Rating -->
+      <div class="fb-rating-group">
+        <p class="fb-rating-label mono">Your Rating *</p>
+        <div class="star-row" id="starRow" role="group" aria-label="Rating">
+          <button class="star-btn" data-v="1" aria-label="1 star">★</button>
+          <button class="star-btn" data-v="2" aria-label="2 stars">★</button>
+          <button class="star-btn" data-v="3" aria-label="3 stars">★</button>
+          <button class="star-btn" data-v="4" aria-label="4 stars">★</button>
+          <button class="star-btn" data-v="5" aria-label="5 stars">★</button>
+        </div>
+        <span class="fb-rating-text mono" id="ratingText">Tap to rate</span>
+      </div>
+
+      <!-- Review text -->
+      <div class="float-group">
+        <textarea id="fbReview" placeholder=" " rows="5"></textarea>
+        <label>Your Review *</label>
+      </div>
+
+      <!-- Title -->
+      <div class="float-group">
+        <input type="text" id="fbTitle" placeholder=" "/>
+        <label>Review Title (optional)</label>
+      </div>
+
+      <!-- Anonymous -->
+      <label class="fb-check-row">
+        <input type="checkbox" id="fbAnon"/>
+        <span class="fb-check-box"></span>
+        Post anonymously
+      </label>
+
+      <!-- Submit -->
+      <button class="btn btn-primary" id="fbSubmit" style="width:100%;justify-content:center;padding:1.1rem;margin-top:1.5rem;font-size:0.85rem">
+        Submit Review →
+      </button>
+    </div>
+
+    <!-- Contact Info -->
+    <div class="fb-contact-card glass reveal" style="margin-top:1.5rem">
+      <div class="label">Direct Contact</div>
+      <div class="fb-contact-row"><span>✉</span><span>hello@rform.studio</span></div>
+      <div class="fb-contact-row"><span>🌐</span><span>www.rform.studio</span></div>
+      <div class="fb-contact-row"><span>⚡</span><span>Reply within 24 hours</span></div>
+    </div>
+  </div>
+
+  <!-- RIGHT: Reviews Feed -->
+  <div class="fb-reviews-col">
+    <div class="fb-reviews-header reveal">
+      <h3><span id="reviewCountLabel">0</span> Reviews</h3>
+      <select id="fbSortReviews" class="fb-sort-sel">
+        <option value="newest">Newest First</option>
+        <option value="oldest">Oldest First</option>
+        <option value="highest">Highest Rated</option>
+        <option value="lowest">Lowest Rated</option>
+      </select>
+    </div>
+
+    <div id="reviewsFeed">
+      <!-- Populated by JS -->
+    </div>
+
+    <div id="reviewsEmpty" class="fb-empty" style="display:none">
+      <p>No reviews yet. Be the first to share your experience!</p>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-grid">
+    <div>
+      <div class="footer-logo">RFORM</div>
+      <p class="footer-tagline">Premium 3D printing from a home-based studio. Precision, quality, speed.</p>
+    </div>
+    <div class="footer-col"><h5>Shop</h5>
+      <a href="shop.html">All Products</a>
+      <a href="shop.html?cat=Custom">Custom Items</a>
+      <a href="custom.html">Custom Orders</a>
+    </div>
+    <div class="footer-col"><h5>Company</h5>
+      <a href="index.html#why">About</a>
+      <a href="feedback.html">Reviews</a>
+    </div>
+    <div class="footer-col"><h5>Account</h5>
+      <a href="account.html">My Orders</a>
+      <a href="cart.html">Cart</a>
+      <a href="checkout.html">Checkout</a>
+    </div>
+    <div class="footer-col"><h5>Info</h5>
+      <a href="#" onclick="showToast('Coming soon')">Shipping Policy</a>
+      <a href="#" onclick="showToast('Coming soon')">Returns</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 R Form Studio. All rights reserved.</span>
+    <span>Home-based · Online only · Ships worldwide</span>
+  </div>
+</footer>
+
+<!-- Load main.js FIRST for theme + shared utils, then feedback.js -->
+<script src="main.js"></script>
+<script src="feedback.js"></script>
+</body>
+</html>

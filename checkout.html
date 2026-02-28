@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Checkout — R Form</title>
+<link rel="stylesheet" href="style.css"/>
+<link rel="stylesheet" href="checkout.css"/>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-logo">RFORM</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li><li><a href="shop.html">Shop</a></li>
+    <li><a href="cart.html">Cart</a></li>
+  </ul>
+  <div class="nav-actions">
+    <a href="cart.html" class="nav-cart"><span>🛒</span> Cart <span class="cart-count" style="display:none">0</span></a>
+    <button class="theme-btn"><span class="theme-icon">☀️</span></button>
+    <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+<div class="mobile-nav" id="mobileNav"><a href="index.html">Home</a><a href="shop.html">Shop</a><a href="cart.html">Cart</a></div>
+
+<div class="co-page">
+  <!-- Steps -->
+  <div class="co-steps">
+    <div class="co-step active"><span class="cstep-n">1</span><span>Details</span></div>
+    <div class="cstep-line"></div>
+    <div class="co-step"><span class="cstep-n">2</span><span>Review</span></div>
+    <div class="cstep-line"></div>
+    <div class="co-step"><span class="cstep-n">3</span><span>Done</span></div>
+  </div>
+
+  <div class="co-layout">
+    <!-- Form -->
+    <div class="co-form-col">
+      <div class="co-section glass reveal">
+        <h4 class="co-sec-title">Contact Information</h4>
+        <div class="g2">
+          <div class="float-group"><input type="text" id="coFirst" placeholder=" " autocomplete="given-name"/><label>First Name</label></div>
+          <div class="float-group"><input type="text" id="coLast" placeholder=" " autocomplete="family-name"/><label>Last Name</label></div>
+        </div>
+        <div class="float-group"><input type="email" id="coEmail" placeholder=" " autocomplete="email"/><label>Email Address</label></div>
+        <div class="float-group"><input type="tel" id="coPhone" placeholder=" " autocomplete="tel"/><label>Phone Number</label></div>
+      </div>
+
+      <div class="co-section glass reveal">
+        <h4 class="co-sec-title">Shipping Address</h4>
+        <div class="float-group"><input type="text" id="coAddr" placeholder=" " autocomplete="street-address"/><label>Street Address</label></div>
+        <div class="g2">
+          <div class="float-group"><input type="text" id="coCity" placeholder=" " autocomplete="address-level2"/><label>City</label></div>
+          <div class="float-group"><input type="text" id="coZip" placeholder=" " autocomplete="postal-code"/><label>ZIP / Postal Code</label></div>
+        </div>
+        <div class="float-group">
+          <select id="coCountry"><option value="">Select Country…</option><option>United States</option><option>United Kingdom</option><option>Canada</option><option>Australia</option><option>India</option><option>Germany</option><option>France</option><option>Other</option></select>
+          <label>Country</label>
+        </div>
+        <div class="float-group"><textarea id="coNotes" placeholder=" " rows="3"></textarea><label>Order Notes (optional)</label></div>
+      </div>
+
+      <button class="btn btn-primary" id="coPlaceBtn" style="width:100%;justify-content:center;padding:1.1rem;font-size:0.85rem">
+        <span id="coBtnText">Place Order →</span>
+        <span id="coLoader" style="display:none">⟳</span>
+      </button>
+      <p style="font-size:0.72rem;color:var(--text-3);text-align:center;margin-top:0.75rem">🔒 Secure — we never store payment data</p>
+    </div>
+
+    <!-- Summary -->
+    <div class="co-summary glass reveal">
+      <h3>Order <span class="grad-text">Summary</span></h3>
+      <div class="co-items" id="coItems"></div>
+      <div class="sum-row"><span>Subtotal</span><span id="coSub">—</span></div>
+      <div class="sum-row"><span>Shipping</span><span style="color:var(--accent)">Free</span></div>
+      <div class="sum-row"><span>Tax (8%)</span><span id="coTax">—</span></div>
+      <div class="sum-total" style="padding:1rem 0 0;font-family:'Syne',sans-serif;font-size:1.5rem;font-weight:700;display:flex;justify-content:space-between;">
+        <span>Total</span><span id="coTotal" class="grad-text">—</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Success Modal -->
+<div class="co-modal" id="coModal">
+  <div class="co-modal-box glass reveal">
+    <div class="modal-check">✓</div>
+    <h2>Order <span class="grad-text">Placed!</span></h2>
+    <p>Thank you! We'll start printing right away and dispatch within 48 hours.</p>
+    <p class="mono" id="coOrderId" style="color:var(--accent);font-size:0.75rem;margin-top:1rem"></p>
+    <div style="display:flex;gap:1rem;margin-top:2rem;flex-wrap:wrap">
+      <a href="account.html" class="btn btn-primary">View Orders</a>
+      <a href="shop.html" class="btn btn-outline">Continue Shopping</a>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="footer-grid">
+    <div><div class="footer-logo">RFORM</div><p class="footer-tagline">Premium 3D printing studio.</p></div>
+    <div class="footer-col"><h5>Shop</h5><a href="shop.html">All Products</a></div>
+    <div class="footer-col"><h5>Help</h5><a href="feedback.html">Contact</a></div>
+    <div class="footer-col"><h5>Account</h5><a href="account.html">Orders</a></div>
+    <div class="footer-col"><h5>Info</h5><a href="#">Shipping</a></div>
+  </div>
+  <div class="footer-bottom"><span>© 2025 R Form.</span></div>
+</footer>
+
+<script src="main.js"></script>
+<script src="checkout.js"></script>
+</body>
+</html>

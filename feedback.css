@@ -1,0 +1,160 @@
+/* ══════════════════════════════════════
+   R FORM — Feedback Styles
+   feedback.css
+══════════════════════════════════════ */
+
+/* ── Stats Bar ── */
+.fb-stats-bar {
+  background: var(--bg-2);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+.fb-stats-inner {
+  max-width: 1320px; margin: 0 auto;
+  padding: 2.5rem 3rem;
+  display: flex; align-items: center; justify-content: center; gap: 0;
+}
+.fb-stat { flex: 1; display: flex; align-items: center; gap: 1rem; justify-content: center; }
+.fb-stat-n { font-family: 'Syne',sans-serif; font-size: 2.8rem; font-weight: 800; line-height: 1; }
+.fb-stat > div { display: flex; flex-direction: column; gap: 0.2rem; }
+.fb-stat > div span { color: var(--accent); font-size: 1rem; letter-spacing: 0.1em; filter: drop-shadow(0 0 6px var(--accent)); }
+.fb-stat > div p { font-size: 0.76rem; color: var(--text-3); font-family: 'DM Mono',monospace; letter-spacing: 0.08em; }
+.fb-stat-div { width: 1px; height: 48px; background: var(--border-2); margin: 0 2rem; }
+
+/* ── Layout ── */
+.fb-layout {
+  display: grid; grid-template-columns: 440px 1fr;
+  gap: 3rem; align-items: start;
+  padding-top: 3rem;
+}
+
+/* ── Form Card ── */
+.fb-form-card { padding: 2.5rem; }
+
+/* ── Star Rating ── */
+.fb-rating-group { margin-bottom: 1.4rem; }
+.fb-rating-label {
+  font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--text-3); display: block; margin-bottom: 0.75rem;
+}
+.star-row { display: flex; gap: 0.35rem; margin-bottom: 0.5rem; }
+.star-btn {
+  font-size: 2rem; line-height: 1;
+  color: var(--border-2);
+  transition: color var(--t), transform 0.15s var(--ease);
+  background: none; border: none; cursor: pointer;
+  padding: 0;
+}
+.star-btn.lit { color: var(--accent); filter: drop-shadow(0 0 8px var(--accent)); }
+.star-btn:hover { transform: scale(1.2); }
+
+.fb-rating-text {
+  font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--text-3);
+}
+
+/* ── Anonymous checkbox ── */
+.fb-check-row {
+  display: flex; align-items: center; gap: 0.75rem;
+  font-size: 0.82rem; color: var(--text-2); cursor: pointer;
+  user-select: none; margin-top: 0.5rem;
+}
+.fb-check-row input { display: none; }
+.fb-check-box {
+  width: 20px; height: 20px; flex-shrink: 0;
+  border: 1.5px solid var(--border-2); border-radius: 4px;
+  display: flex; align-items: center; justify-content: center;
+  transition: all var(--t);
+  background: var(--surface);
+}
+.fb-check-row input:checked + .fb-check-box {
+  background: var(--accent); border-color: var(--accent);
+  box-shadow: 0 0 10px var(--accent-glow);
+}
+.fb-check-row input:checked + .fb-check-box::after {
+  content: '✓'; font-size: 0.7rem; color: var(--bg); font-weight: 700;
+}
+
+/* ── Contact Card ── */
+.fb-contact-card { padding: 1.5rem 2rem; }
+.fb-contact-row {
+  display: flex; align-items: center; gap: 1rem;
+  padding: 0.65rem 0; border-bottom: 1px solid var(--border);
+  font-size: 0.84rem; color: var(--text-2);
+}
+.fb-contact-row:last-child { border: none; }
+.fb-contact-row span:first-child { width: 20px; text-align: center; flex-shrink: 0; }
+
+/* ── Reviews Column ── */
+.fb-reviews-header {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem;
+}
+.fb-reviews-header h3 { font-size: 1.4rem; }
+
+.fb-sort-sel {
+  padding: 0.5rem 1rem;
+  background: var(--surface); border: 1px solid var(--border-2);
+  border-radius: var(--radius); color: var(--text); font-size: 0.8rem; cursor: pointer;
+}
+.fb-sort-sel:focus { outline: none; border-color: var(--accent); }
+
+/* ── Review Card ── */
+.review-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.8rem 2rem;
+  margin-bottom: 1rem;
+  animation: cardIn 0.45s var(--ease);
+  transition: border-color var(--t), box-shadow var(--t);
+}
+@keyframes cardIn { from { opacity:0; transform:translateY(16px); } to { opacity:1; transform:none; } }
+.review-card:hover { border-color: rgba(0,229,255,0.25); box-shadow: 0 0 24px var(--accent-glow); }
+
+.review-card-top {
+  display: flex; align-items: flex-start; justify-content: space-between;
+  margin-bottom: 1rem; gap: 1rem; flex-wrap: wrap;
+}
+.review-author { display: flex; align-items: center; gap: 0.85rem; }
+.review-av {
+  width: 40px; height: 40px; border-radius: 50%;
+  background: var(--grad-1); color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Syne',sans-serif; font-size: 1rem; font-weight: 800;
+  flex-shrink: 0;
+}
+.review-av-name { font-weight: 600; font-size: 0.9rem; margin-bottom: 0.2rem; }
+.review-av-product { font-size: 0.7rem; color: var(--accent); font-family: 'DM Mono',monospace; letter-spacing: 0.1em; }
+
+.review-meta { text-align: right; }
+.review-stars { font-size: 1.1rem; letter-spacing: 0.1em; filter: drop-shadow(0 0 4px var(--accent)); }
+.review-date { font-size: 0.68rem; color: var(--text-3); font-family: 'DM Mono',monospace; margin-top: 0.25rem; }
+
+.review-title { font-family: 'Syne',sans-serif; font-size: 1.05rem; font-weight: 700; margin-bottom: 0.6rem; }
+.review-body { font-size: 0.86rem; color: var(--text-2); line-height: 1.75; font-style: italic; }
+
+.review-verified {
+  display: inline-flex; align-items: center; gap: 0.35rem;
+  font-family: 'DM Mono',monospace; font-size: 0.62rem; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--accent); margin-top: 1rem;
+  opacity: 0.75;
+}
+
+/* ── Empty state ── */
+.fb-empty {
+  text-align: center; padding: 4rem 2rem;
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  font-size: 0.9rem; color: var(--text-3); font-style: italic;
+}
+
+/* ── Responsive ── */
+@media (max-width: 1100px) {
+  .fb-layout { grid-template-columns: 1fr; }
+  .fb-form-card { max-width: 600px; }
+}
+@media (max-width: 600px) {
+  .fb-stats-inner { flex-wrap: wrap; gap: 1.5rem; }
+  .fb-stat-div { display: none; }
+}
